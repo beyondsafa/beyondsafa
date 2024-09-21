@@ -4,7 +4,97 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Personal Portfolio</title>
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      font-family: 'Arial', sans-serif;
+      height: 100%;
+      color: white;
+    }
+
+    header {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      padding: 20px;
+      display: flex;
+      justify-content: flex-end;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      filter: blur(5px);
+      z-index: -1;
+    }
+
+    .content {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    .work-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .work-item {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 20px;
+      border-radius: 10px;
+      width: 200px;
+    }
+
+    .work-item h3 {
+      margin-bottom: 10px;
+    }
+
+    .photo-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .photo-item img {
+      width: 300px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="background-container"></div>
@@ -42,11 +132,11 @@
     <div class="work-grid">
       <div class="work-item">
         <h3>Studentship</h3>
-        <p>I am first and formost a student.</p>
+        <p>I am first and foremost a student.</p>
       </div>
       <div class="work-item">
-        <h3>this website</h3>
-        <p>its basically a photo showcase and some of my details.</p>
+        <h3>This Website</h3>
+        <p>It's basically a photo showcase and some of my details.</p>
       </div>
     </div>
   </section>
@@ -68,10 +158,20 @@
 
   <section id="contact" class="content">
     <h2>Contact</h2>
-    <p>Email me at: <a href="mailto:safayethh@pm.me"</a></p>
+    <p>Email me at: <a href="mailto:safayethh@pm.me">safayethh@pm.me</a></p>
     <p>Find me on <a href="https://www.linkedin.com/in/safayet-hossain-984236329/" target="_blank">LinkedIn</a></p>
   </section>
 
-  <script src="app.js"></script>
+  <script>
+    const collectionId = 'f6_E7czkVjk';
+    const backgroundContainer = document.querySelector('.background-container');
+
+    function fetchBackgroundImage() {
+      const imageUrl = `https://source.unsplash.com/collection/${collectionId}/1600x900`;
+      backgroundContainer.style.backgroundImage = `url(${imageUrl})`;
+    }
+
+    fetchBackgroundImage();
+  </script>
 </body>
 </html>
